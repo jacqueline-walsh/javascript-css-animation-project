@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+        <div class="container-fluid">
+            <div class="inner-container">
+                <div class="row">
+                    <div class="col">
+                        <section></section>
+                    </div>
+                    <div class="col align-center poem">
+                        <h1>QUEEN ANNE’S LACE</h1>
+                        <p>BY WILLIAM CARLOS WILLIAMS</p>
+                        <p class="poem">Her body is not so white as<br>
+                            anemone petals nor so smooth—nor<br>
+                            so remote a thing. It is a field<br>
+                            of the wild carrot taking<br>
+                            thefield by force; the grass<br>
+                            does not raise above it.<br>
+                            Here is no question of whiteness,<br>
+                            white as can be, with a purple mole<br>
+                            at the center of each flower.<br>
+                            Each flower is a hand’s span<br>
+                            of her whiteness. Wherever<br>
+                            his hand has lain there is<br>
+                            a tiny purple blossom under his touch<br>
+                            to which the fibres of her being<br>
+                            stem one by one, each to its end,<br>
+                            until the whole field is a<br>
+                            white desire, empty, a single stem,<br>
+                            a cluster, flower by flower,<br>
+                            a pious wish to whiteness gone over—<br>
+                            or nothing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        let images = [
+            'url("img1.jpg")',
+            'url("img2.jpg")',
+            'url("img3.jpg")',
+            'url("img4.jpg")',
+            'url("img5.jpg")',
+            'url("img6.jpg")',
+            ];
+
+        function dropImage() {
+            let section = document.querySelector('section');
+            let drop = document.createElement('span');
+            // drop.style.left = Math.random() * innerWidth + 'px';
+            drop.style.top = Math.random() * innerHeight + 'px';
+
+            let bg = images[Math.floor(Math.random() * images.length)];
+
+            let size = Math.random() * 200;
+
+            drop.style.width = (50 + size) + 'px';
+            drop.style.height = (50 + size) + 'px';
+            drop.style.backgroundImage = bg;
+
+            section.appendChild(drop);
+
+            setTimeout(() => {
+                drop.remove();
+            },6000);
+        }
+        setInterval(dropImage, 50);
+
+    </script>
+</body>
+</html>

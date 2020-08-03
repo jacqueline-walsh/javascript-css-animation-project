@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    <section></section>
+    <script>
+        let images = [
+            'url("lotty.jpg")',
+            'url("nathan.jpg")',
+            'url("flower.jpg")',
+            'url("maeve.jpg")',
+            'url("lotty-puppy.jpg")',
+            'url("mummy.jpg")',
+            ];
+
+        function dropImage() {
+            let section = document.querySelector('section');
+            let drop = document.createElement('span');
+            drop.style.left = Math.random() * innerWidth + 'px';
+            drop.style.top = Math.random() * innerHeight + 'px';
+
+            let bg = images[Math.floor(Math.random() * images.length)];
+
+            let size = Math.random() * 200;
+
+            drop.style.width = size + 'px';
+            drop.style.height = size + 'px';
+            drop.style.backgroundImage = bg;
+
+            section.appendChild(drop);
+
+            setTimeout(() => {
+                drop.remove();
+            },6000);
+        }
+        setInterval(dropImage, 50);
+
+    </script>
+</body>
+</html>
